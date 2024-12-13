@@ -1,12 +1,12 @@
-#ifndef DAY9_H_
-#define DAY9_H_
+#ifndef DAY11_H_
+#define DAY11_H_
 
 #include <vector>
 #include <cmath>
 #include <string>
 #include <fstream>
 
-namespace day9 {
+namespace day11 {
     struct memo {
         unsigned long long stone;
         int blinks;

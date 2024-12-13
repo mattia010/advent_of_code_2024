@@ -1,6 +1,6 @@
-#include "src/day9.hpp"
+#include "src/day11.hpp"
 
-std::vector<unsigned long long>* day9::parseInput(std::string filepath) {
+std::vector<unsigned long long>* day11::parseInput(std::string filepath) {
     std::ifstream in(filepath, std::ios_base::in);
     std::vector<unsigned long long>* p_stones = new std::vector<unsigned long long>;
     unsigned long long num;
@@ -10,7 +10,7 @@ std::vector<unsigned long long>* day9::parseInput(std::string filepath) {
     return p_stones;
 }
 
-unsigned long long day9::countStones(std::vector<unsigned long long> *p_stones, int blinks) {
+unsigned long long day11::countStones(std::vector<unsigned long long> *p_stones, int blinks) {
     std::vector<memo*> *p_memos = new std::vector<memo*>;
     unsigned long long res = 0;
     for (auto it = p_stones->begin(); it != p_stones->end(); ++it) {
@@ -19,7 +19,7 @@ unsigned long long day9::countStones(std::vector<unsigned long long> *p_stones, 
     return res;
 }
 
-unsigned long long day9::countStones(unsigned long long stone, int blinks, std::vector<memo*> *p_memos) {
+unsigned long long day11::countStones(unsigned long long stone, int blinks, std::vector<memo*> *p_memos) {
     if (blinks == 0) {
         return 1;
     }
