@@ -1,6 +1,6 @@
-#include "day10.hpp"
+#include "src/day10.hpp"
 
-Day10::matrix* Day10::parseInput(std::string filepath) {
+day10::matrix* day10::parseInput(std::string filepath) {
     std::ifstream in(filepath, std::ios_base::in);
     std::string line;
     if (!std::getline(in, line)) {
@@ -28,7 +28,7 @@ Day10::matrix* Day10::parseInput(std::string filepath) {
     return m;
 }
 
-bool* Day10::calc_trailhead_score_matrix(matrix *m, int trailhead_pos, bool *p_bool_matrix) {
+bool* day10::calc_trailhead_score_matrix(matrix *m, int trailhead_pos, bool *p_bool_matrix) {
     if (trailhead_pos < 0 || trailhead_pos >= m->rows * m->columns) {
         throw std::invalid_argument("pos out of bounds");
     }
@@ -55,7 +55,7 @@ bool* Day10::calc_trailhead_score_matrix(matrix *m, int trailhead_pos, bool *p_b
     return p_bool_matrix;
 }
 
-int Day10::calc_trailhead_score(matrix *m, int trailhead_pos) {
+int day10::calc_trailhead_score(matrix *m, int trailhead_pos) {
     if (trailhead_pos < 0 || trailhead_pos >= m->rows * m->columns) {
         throw std::invalid_argument("pos out of bounds");
     }
@@ -74,7 +74,7 @@ int Day10::calc_trailhead_score(matrix *m, int trailhead_pos) {
     return score;
 }
 
-int Day10::calc_sum_trailheads_scores(matrix *m) {
+int day10::calc_sum_trailheads_scores(matrix *m) {
     int res = 0;
     for (int i = 0; i < m->rows * m->columns; ++i) {
         if (m->p_matrix[i] == 0) {
@@ -84,7 +84,7 @@ int Day10::calc_sum_trailheads_scores(matrix *m) {
     return res;
 }
 
-int Day10::calc_trailhead_rating(matrix *m, int trailhead_pos) {
+int day10::calc_trailhead_rating(matrix *m, int trailhead_pos) {
     if (trailhead_pos < 0 || trailhead_pos >= m->rows * m->columns) {
         throw std::invalid_argument("pos out of bounds");
     }
@@ -114,7 +114,7 @@ int Day10::calc_trailhead_rating(matrix *m, int trailhead_pos) {
     return scoreUp + scoreDown + scoreLeft + scoreRight;
 }
 
-int Day10::calc_sum_trailheads_ratings(matrix *m) {
+int day10::calc_sum_trailheads_ratings(matrix *m) {
     int res = 0;
     for (int i = 0; i < m->rows * m->columns; ++i) {
         if (m->p_matrix[i] == 0) {

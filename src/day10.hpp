@@ -6,7 +6,7 @@
 #include <sstream>
 #include <iostream> // tmp
 
-namespace Day10 {
+namespace day10 {
     constexpr unsigned short MAX_HEIGHT = 9;
 
     struct matrix {
