@@ -1,7 +1,5 @@
 #include "src/day9.hpp"
 
-#include <iostream>
-
 std::vector<unsigned long long>* day9::parseInput(std::string filepath) {
     std::ifstream in(filepath, std::ios_base::in);
     std::vector<unsigned long long>* p_stones = new std::vector<unsigned long long>;
@@ -14,8 +12,7 @@ std::vector<unsigned long long>* day9::parseInput(std::string filepath) {
 
 unsigned long long day9::countStones(std::vector<unsigned long long> *p_stones, int blinks) {
     std::vector<memo*> *p_memos = new std::vector<memo*>;
-    unsigned long long 
-res = 0;
+    unsigned long long res = 0;
     for (auto it = p_stones->begin(); it != p_stones->end(); ++it) {
         res += countStones(*it, blinks, p_memos);
     }
@@ -32,8 +29,7 @@ unsigned long long day9::countStones(unsigned long long stone, int blinks, std::
         }
     }
 
-    unsigned long long 
-res = 0;
+    unsigned long long res = 0;
     if (stone == 0) {
         res = countStones(1, blinks-1, p_memos);
         p_memos->push_back(new memo(stone, blinks, res));
