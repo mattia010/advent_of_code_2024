@@ -1,6 +1,6 @@
 #include "src/day10.hpp"
 
-day10::matrix* day10::parseInput(std::string filepath) {
+day10::matrix* day10::parse_input(std::string filepath) {
     std::ifstream in(filepath, std::ios_base::in);
     std::string line;
     if (!std::getline(in, line)) {

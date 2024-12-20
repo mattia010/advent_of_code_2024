@@ -1,1 +1,5 @@
 bin
+googletest
+benchmark
+.vscode
+.git

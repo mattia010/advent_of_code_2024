@@ -16,7 +16,7 @@ namespace day10 {
 
         matrix(int *p_matrix_in, int rows_in, int columns_in) : p_matrix{p_matrix_in}, rows{rows_in}, columns{columns_in} {} 
     };
-    matrix* parseInput(std::string filepath);
+    matrix* parse_input(std::string filepath);
     bool* calc_trailhead_score_matrix(matrix *m, int trailhead_pos, bool*p_bool_matrix);
     int calc_trailhead_score(matrix *m, int trailhead_pos);
     int calc_sum_trailheads_scores(matrix *m);
